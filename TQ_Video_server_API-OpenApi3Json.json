@@ -1,0 +1,304 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Totalcheq Video server API",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://example.com/api/v1",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/devices": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Add video devices",
+        "operationId": "Addvideodevices",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddvideodevicesRequest"
+              },
+              "example": {
+                "clientId": "",
+                "cameraId": "",
+                "warehouse": ""
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "put": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Update video devices",
+        "operationId": "Updatevideodevices",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatevideodevicesRequest"
+              },
+              "example": {
+                "clientId": "",
+                "cameraId": "",
+                "warehouse": ""
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/transaction": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Add transaction",
+        "operationId": "Addtransaction",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddtransactionRequest"
+              },
+              "example": {
+                "clientId": "",
+                "transactionType": "",
+                "orderId": "",
+                "zoneId": "",
+                "warehouse": "",
+                "data": [
+                  {
+                    "commodityId": "",
+                    "timeStamp": ""
+                  }
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/stream": {
+      "get": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Get simple video stream",
+        "operationId": "Getsimplevideostream",
+        "parameters": [
+          {
+            "name": "simpleId",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "string",
+              "example": "id"
+            }
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "string",
+              "example": "application/json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddvideodevicesRequest": {
+        "title": "AddvideodevicesRequest",
+        "required": [
+          "clientId",
+          "cameraId",
+          "warehouse"
+        ],
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "cameraId": {
+            "type": "string"
+          },
+          "warehouse": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "clientId": "",
+          "cameraId": "",
+          "warehouse": ""
+        }
+      },
+      "UpdatevideodevicesRequest": {
+        "title": "UpdatevideodevicesRequest",
+        "required": [
+          "clientId",
+          "cameraId",
+          "warehouse"
+        ],
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "cameraId": {
+            "type": "string"
+          },
+          "warehouse": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "clientId": "",
+          "cameraId": "",
+          "warehouse": ""
+        }
+      },
+      "AddtransactionRequest": {
+        "title": "AddtransactionRequest",
+        "required": [
+          "clientId",
+          "transactionType",
+          "orderId",
+          "zoneId",
+          "warehouse",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "clientId": {
+            "type": "string"
+          },
+          "transactionType": {
+            "type": "string"
+          },
+          "orderId": {
+            "type": "string"
+          },
+          "zoneId": {
+            "type": "string"
+          },
+          "warehouse": {
+            "type": "string"
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Datum"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "clientId": "",
+          "transactionType": "",
+          "orderId": "",
+          "zoneId": "",
+          "warehouse": "",
+          "data": [
+            {
+              "commodityId": "",
+              "timeStamp": ""
+            }
+          ]
+        }
+      },
+      "Datum": {
+        "title": "Datum",
+        "required": [
+          "commodityId",
+          "timeStamp"
+        ],
+        "type": "object",
+        "properties": {
+          "commodityId": {
+            "type": "string"
+          },
+          "timeStamp": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "commodityId": "",
+          "timeStamp": ""
+        }
+      }
+    },
+    "securitySchemes": {
+      "API-Key": {
+        "type": "apiKey",
+        "description": "",
+        "name": "X-API-Key",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "API-Key": []
+    }
+  ],
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}

@@ -30,7 +30,7 @@
               "example": {
                 "clientId": "",
                 "cameraId": "",
-                "warehouse": ""
+                "location": ""
               }
             }
           },
@@ -61,7 +61,7 @@
               "example": {
                 "clientId": "",
                 "cameraId": "",
-                "warehouse": ""
+                "location": ""
               }
             }
           },
@@ -94,9 +94,9 @@
               "example": {
                 "clientId": "",
                 "transactionType": "",
-                "orderId": "",
+                "documentId": "",
                 "zoneId": "",
-                "warehouse": "",
+                "location": "",
                 "data": [
                   {
                     "commodityId": "",
@@ -191,7 +191,7 @@
         "required": [
           "clientId",
           "cameraId",
-          "warehouse"
+          "location"
         ],
         "type": "object",
         "properties": {

@@ -95,6 +95,7 @@
                 "clientId": "",
                 "transactionType": "",
                 "documentId": "",
+                "shipmentId": "",
                 "zoneId": "",
                 "location": "",
                 "data": [
@@ -166,7 +167,7 @@
         "required": [
           "clientId",
           "cameraId",
-          "warehouse"
+          "location"
         ],
         "type": "object",
         "properties": {
@@ -176,14 +177,14 @@
           "cameraId": {
             "type": "string"
           },
-          "warehouse": {
+          "location": {
             "type": "string"
           }
         },
         "example": {
           "clientId": "",
           "cameraId": "",
-          "warehouse": ""
+          "location": ""
         }
       },
       "UpdatevideodevicesRequest": {
@@ -201,14 +202,14 @@
           "cameraId": {
             "type": "string"
           },
-          "warehouse": {
+          "location": {
             "type": "string"
           }
         },
         "example": {
           "clientId": "",
           "cameraId": "",
-          "warehouse": ""
+          "location": ""
         }
       },
       "AddtransactionRequest": {
@@ -216,9 +217,10 @@
         "required": [
           "clientId",
           "transactionType",
-          "orderId",
+          "documentId",
+          "shipmentId",
           "zoneId",
-          "warehouse",
+          "location",
           "data"
         ],
         "type": "object",
@@ -229,13 +231,16 @@
           "transactionType": {
             "type": "string"
           },
-          "orderId": {
+          "documentId": {
+            "type": "string"
+          },
+          "shipmentId": {
             "type": "string"
           },
           "zoneId": {
             "type": "string"
           },
-          "warehouse": {
+          "location": {
             "type": "string"
           },
           "data": {
@@ -249,9 +254,9 @@
         "example": {
           "clientId": "",
           "transactionType": "",
-          "orderId": "",
+          "documentId": "",
           "zoneId": "",
-          "warehouse": "",
+          "location": "",
           "data": [
             {
               "commodityId": "",

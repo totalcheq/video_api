@@ -1,67 +1,51 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Totalcheq Video server API",
+    "title": "Totalcheq Admin API",
     "contact": {},
     "version": "1.0"
   },
   "servers": [
     {
-      "url": "http://example.com/api/v1",
+      "url": "https://admin.totalcheq.com/api/v1",
       "variables": {}
     }
   ],
   "paths": {
-    "/devices": {
+    "/CreateTransaction": {
       "post": {
         "tags": [
           "Misc"
         ],
-        "summary": "Add video devices",
-        "operationId": "Addvideodevices",
+        "summary": "Add transactions",
+        "operationId": "Addtransactions",
         "parameters": [],
         "requestBody": {
           "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddvideodevicesRequest"
+                "$ref": "#/components/schemas/AddtransactionsRequest"
               },
               "example": {
-                "clientId": "",
-                "cameraId": "",
-                "location": ""
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {}
-          }
-        },
-        "deprecated": false
-      },
-      "put": {
-        "tags": [
-          "Misc"
-        ],
-        "summary": "Update video devices",
-        "operationId": "Updatevideodevices",
-        "parameters": [],
-        "requestBody": {
-          "description": "",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdatevideodevicesRequest"
-              },
-              "example": {
-                "clientId": "",
-                "cameraId": "",
-                "location": ""
+                "api_key": "API Key",
+                "log_id": "log id from external system",
+                "expense_code": "Kod rozhodu",
+                "pallet": "Kod rozhodnoi partii",
+                "date_of_expense": "Data rozhodu",
+                "timestamp": "2021-08-25 15:28:25.730",
+                "ext_sys_guid": "Product code in the external system",
+                "goods_sku": "Article",
+                "goods_name": "Goods name",
+                "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
+                "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
+                "recipient_name": "Name of the contractor-recipient",
+                "employee_ib": "Employee id",
+                "employee_pib": "Employee name",
+                "wh_area_name": "Warehouse area name",
+                "selection_cell": "Selection cell name",
+                "wh_area_id": "Warehouse area id",
+                "qty": "Quantity of goods"
               }
             }
           },
@@ -76,80 +60,33 @@
         "deprecated": false
       }
     },
-    "/transaction": {
+    "/addGoodsLoading": {
       "post": {
         "tags": [
           "Misc"
         ],
-        "summary": "Add transaction",
-        "operationId": "Addtransaction",
+        "summary": "Add goods loading",
+        "operationId": "Addgoodsloading",
         "parameters": [],
         "requestBody": {
           "description": "",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddtransactionRequest"
+                "$ref": "#/components/schemas/AddgoodsloadingRequest"
               },
               "example": {
-                "clientId": "",
-                "transactionType": "",
-                "documentId": "",
-                "shipmentId": "",
-                "zoneId": "",
-                "location": "",
-                "data": [
-                  {
-                    "commodityId": "",
-                    "timeStamp": ""
-                  }
-                ]
+                "api_key": "API Key",
+                "operation_id": "operation_id",
+                "log_id": "log id from external system",
+                "pallet": "Kod rozhodnoi partii",
+                "timestamp_start": "2021-08-25 15:28:25.730",
+                "timestamp_end": "2021-08-25 15:31:40.530"
               }
             }
           },
           "required": true
         },
-        "responses": {
-          "200": {
-            "description": "",
-            "headers": {}
-          }
-        },
-        "deprecated": false
-      }
-    },
-    "/stream": {
-      "get": {
-        "tags": [
-          "Misc"
-        ],
-        "summary": "Get simple video stream",
-        "operationId": "Getsimplevideostream",
-        "parameters": [
-          {
-            "name": "simpleId",
-            "in": "query",
-            "description": "",
-            "required": true,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "string",
-              "example": "id"
-            }
-          },
-          {
-            "name": "Content-Type",
-            "in": "header",
-            "description": "",
-            "required": true,
-            "style": "simple",
-            "schema": {
-              "type": "string",
-              "example": "application/json"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "",
@@ -162,127 +99,184 @@
   },
   "components": {
     "schemas": {
-      "AddvideodevicesRequest": {
-        "title": "AddvideodevicesRequest",
+      "AddtransactionsRequest": {
+        "title": "AddtransactionsRequest",
         "required": [
-          "clientId",
-          "cameraId",
-          "location"
+          "api_key",
+          "log_id",
+          "expense_code",
+          "pallet",
+          "date_of_expense",
+          "timestamp",
+          "ext_sys_guid",
+          "goods_sku",
+          "goods_name",
+          "wh_ext_sys_name",
+          "recipient_ext_sys_guid",
+          "recipient_name",
+          "employee_ib",
+          "employee_pib",
+          "wh_area_name",
+          "selection_cell",
+          "wh_area_id",
+          "qty"
         ],
         "type": "object",
         "properties": {
-          "clientId": {
+          "api_key": {
             "type": "string"
           },
-          "cameraId": {
+          "log_id": {
             "type": "string"
           },
-          "location": {
+          "expense_code": {
+            "type": "string"
+          },
+          "pallet": {
+            "type": "string"
+          },
+          "date_of_expense": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string"
+          },
+          "ext_sys_guid": {
+            "type": "string"
+          },
+          "goods_sku": {
+            "type": "string"
+          },
+          "goods_name": {
+            "type": "string"
+          },
+          "wh_ext_sys_name": {
+            "type": "string"
+          },
+          "recipient_ext_sys_guid": {
+            "type": "string"
+          },
+          "recipient_name": {
+            "type": "string"
+          },
+          "employee_ib": {
+            "type": "string"
+          },
+          "employee_pib": {
+            "type": "string"
+          },
+          "wh_area_name": {
+            "type": "string"
+          },
+          "selection_cell": {
+            "type": "string"
+          },
+          "wh_area_id": {
+            "type": "string"
+          },
+          "qty": {
             "type": "string"
           }
         },
         "example": {
-          "clientId": "",
-          "cameraId": "",
-          "location": ""
+          "api_key": "API Key",
+          "log_id": "log id from external system",
+          "expense_code": "Kod rozhodu",
+          "pallet": "Kod rozhodnoi partii",
+          "date_of_expense": "Data rozhodu",
+          "timestamp": "2021-08-25 15:28:25.730",
+          "ext_sys_guid": "Product code in the external system",
+          "goods_sku": "Article",
+          "goods_name": "Goods name",
+          "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
+          "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
+          "recipient_name": "Name of the contractor-recipient",
+          "employee_ib": "Employee id",
+          "employee_pib": "Employee name",
+          "wh_area_name": "Warehouse area name",
+          "selection_cell": "Selection cell name",
+          "wh_area_id": "Warehouse area id",
+          "qty": "Quantity of goods"
         }
       },
-      "UpdatevideodevicesRequest": {
-        "title": "UpdatevideodevicesRequest",
+      "AddgoodsloadingRequest": {
+        "title": "AddgoodsloadingRequest",
         "required": [
-          "clientId",
-          "cameraId",
-          "location"
+          "api_key",
+          "operation_id",
+          "log_id",
+          "pallet",
+          "timestamp_start",
+          "timestamp_end"
         ],
         "type": "object",
         "properties": {
-          "clientId": {
+          "api_key": {
             "type": "string"
           },
-          "cameraId": {
+          "operation_id": {
             "type": "string"
           },
-          "location": {
+          "log_id": {
+            "type": "string"
+          },
+          "pallet": {
+            "type": "string"
+          },
+          "timestamp_start": {
+            "type": "string"
+          },
+          "timestamp_end": {
             "type": "string"
           }
         },
         "example": {
-          "clientId": "",
-          "cameraId": "",
-          "location": ""
+          "api_key": "API Key",
+          "operation_id": "operation_id",
+          "log_id": "log id from external system",
+          "pallet": "Kod rozhodnoi partii",
+          "timestamp_start": "2021-08-25 15:28:25.730",
+          "timestamp_end": "2021-08-25 15:31:40.530"
         }
       },
-      "AddtransactionRequest": {
-        "title": "AddtransactionRequest",
+      "AddpalletpackingRequest": {
+        "title": "AddpalletpackingRequest",
         "required": [
-          "clientId",
-          "transactionType",
-          "documentId",
-          "shipmentId",
-          "zoneId",
-          "location",
-          "data"
+          "api_key",
+          "operation_id",
+          "log_id",
+          "pallet",
+          "timestamp_start",
+          "timestamp_end"
         ],
         "type": "object",
         "properties": {
-          "clientId": {
+          "api_key": {
             "type": "string"
           },
-          "transactionType": {
+          "operation_id": {
             "type": "string"
           },
-          "documentId": {
+          "log_id": {
             "type": "string"
           },
-          "shipmentId": {
+          "pallet": {
             "type": "string"
           },
-          "zoneId": {
+          "timestamp_start": {
             "type": "string"
           },
-          "location": {
-            "type": "string"
-          },
-          "data": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Datum"
-            },
-            "description": ""
-          }
-        },
-        "example": {
-          "clientId": "",
-          "transactionType": "",
-          "documentId": "",
-          "zoneId": "",
-          "location": "",
-          "data": [
-            {
-              "commodityId": "",
-              "timeStamp": ""
-            }
-          ]
-        }
-      },
-      "Datum": {
-        "title": "Datum",
-        "required": [
-          "commodityId",
-          "timeStamp"
-        ],
-        "type": "object",
-        "properties": {
-          "commodityId": {
-            "type": "string"
-          },
-          "timeStamp": {
+          "timestamp_end": {
             "type": "string"
           }
         },
         "example": {
-          "commodityId": "",
-          "timeStamp": ""
+          "api_key": "API Key",
+          "operation_id": "operation_id",
+          "log_id": "log id from external system",
+          "pallet": "Kod rozhodnoi partii",
+          "timestamp_start": "2021-08-25 15:28:25.730",
+          "timestamp_end": "2021-08-25 15:31:40.530"
         }
       }
     },

@@ -12,7 +12,7 @@
     }
   ],
   "paths": {
-    "/CreateTransaction": {
+    "/CreateTransactions": {
       "post": {
         "tags": [
           "Misc"
@@ -25,28 +25,100 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AddtransactionsRequest"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AddtransactionsRequest"
+                },
+                "description": "",
+                "example": [
+                  {
+                    "api_key": "API Key",
+                    "operation_id": "operation_id",
+                    "log_id": "log id from external system",
+                    "expense_code": "Kod rozhodu",
+                    "pallet": "Kod rozhodnoi partii",
+                    "date_of_expense": "Data rozhodu",
+                    "timestamp": "2021-08-25 15:28:25.730",
+                    "ext_sys_guid": "Product code in the external system",
+                    "goods_sku": "Article",
+                    "goods_name": "Goods name",
+                    "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
+                    "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
+                    "recipient_name": "Name of the contractor-recipient",
+                    "employee_ib": "Employee id",
+                    "employee_pib": "Employee name",
+                    "wh_area_name": "Warehouse area name",
+                    "selection_cell": "Selection cell name",
+                    "wh_area_id": "Warehouse area id",
+                    "qty": "Quantity of goods"
+                  },
+                  {
+                    "api_key": "API Key",
+                    "operation_id": "operation_id",
+                    "log_id": "log id from external system",
+                    "expense_code": "Kod rozhodu",
+                    "pallet": "Kod rozhodnoi partii",
+                    "date_of_expense": "Data rozhodu",
+                    "timestamp": "2021-08-25 15:28:25.730",
+                    "ext_sys_guid": "Product code in the external system",
+                    "goods_sku": "Article",
+                    "goods_name": "Goods name",
+                    "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
+                    "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
+                    "recipient_name": "Name of the contractor-recipient",
+                    "employee_ib": "Employee id",
+                    "employee_pib": "Employee name",
+                    "wh_area_name": "Warehouse area name",
+                    "selection_cell": "Selection cell name",
+                    "wh_area_id": "Warehouse area id",
+                    "qty": "Quantity of goods"
+                  }
+                ]
               },
-              "example": {
-                "api_key": "API Key",
-                "log_id": "log id from external system",
-                "expense_code": "Kod rozhodu",
-                "pallet": "Kod rozhodnoi partii",
-                "date_of_expense": "Data rozhodu",
-                "timestamp": "2021-08-25 15:28:25.730",
-                "ext_sys_guid": "Product code in the external system",
-                "goods_sku": "Article",
-                "goods_name": "Goods name",
-                "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
-                "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
-                "recipient_name": "Name of the contractor-recipient",
-                "employee_ib": "Employee id",
-                "employee_pib": "Employee name",
-                "wh_area_name": "Warehouse area name",
-                "selection_cell": "Selection cell name",
-                "wh_area_id": "Warehouse area id",
-                "qty": "Quantity of goods"
-              }
+              "example": [
+                {
+                  "api_key": "API Key",
+                  "operation_id": "operation_id",
+                  "log_id": "log id from external system",
+                  "expense_code": "Kod rozhodu",
+                  "pallet": "Kod rozhodnoi partii",
+                  "date_of_expense": "Data rozhodu",
+                  "timestamp": "2021-08-25 15:28:25.730",
+                  "ext_sys_guid": "Product code in the external system",
+                  "goods_sku": "Article",
+                  "goods_name": "Goods name",
+                  "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
+                  "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
+                  "recipient_name": "Name of the contractor-recipient",
+                  "employee_ib": "Employee id",
+                  "employee_pib": "Employee name",
+                  "wh_area_name": "Warehouse area name",
+                  "selection_cell": "Selection cell name",
+                  "wh_area_id": "Warehouse area id",
+                  "qty": "Quantity of goods"
+                },
+                {
+                  "api_key": "API Key",
+                  "operation_id": "operation_id",
+                  "log_id": "log id from external system",
+                  "expense_code": "Kod rozhodu",
+                  "pallet": "Kod rozhodnoi partii",
+                  "date_of_expense": "Data rozhodu",
+                  "timestamp": "2021-08-25 15:28:25.730",
+                  "ext_sys_guid": "Product code in the external system",
+                  "goods_sku": "Article",
+                  "goods_name": "Goods name",
+                  "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
+                  "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
+                  "recipient_name": "Name of the contractor-recipient",
+                  "employee_ib": "Employee id",
+                  "employee_pib": "Employee name",
+                  "wh_area_name": "Warehouse area name",
+                  "selection_cell": "Selection cell name",
+                  "wh_area_id": "Warehouse area id",
+                  "qty": "Quantity of goods"
+                }
+              ]
             }
           },
           "required": true
@@ -95,6 +167,42 @@
         },
         "deprecated": false
       }
+    },
+    "/addPalletPacking": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Add pallet packing",
+        "operationId": "Addpalletpacking",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddpalletpackingRequest"
+              },
+              "example": {
+                "api_key": "API Key",
+                "operation_id": "operation_id",
+                "log_id": "log id from external system",
+                "pallet": "Kod rozhodnoi partii",
+                "timestamp_start": "2021-08-25 15:28:25.730",
+                "timestamp_end": "2021-08-25 15:31:40.530"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
     }
   },
   "components": {
@@ -103,6 +211,7 @@
         "title": "AddtransactionsRequest",
         "required": [
           "api_key",
+          "operation_id",
           "log_id",
           "expense_code",
           "pallet",
@@ -124,6 +233,9 @@
         "type": "object",
         "properties": {
           "api_key": {
+            "type": "string"
+          },
+          "operation_id": {
             "type": "string"
           },
           "log_id": {
@@ -180,6 +292,7 @@
         },
         "example": {
           "api_key": "API Key",
+          "operation_id": "operation_id",
           "log_id": "log id from external system",
           "expense_code": "Kod rozhodu",
           "pallet": "Kod rozhodnoi partii",

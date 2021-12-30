@@ -190,6 +190,218 @@
         "deprecated": false
       }
     },
+    "/CreateTransactions_less": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Add transactions (data less)",
+        "operationId": "Addtransactions(dataless)",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AddtransactionsdatalessRequest"
+                },
+                "description": "",
+                "example": [
+                  {
+                    "api_key": "API Key",
+                    "order": {
+                      "ext_sys_guid": "(log_id) Order code in the external system",
+                      "doc_date": "(Дата расхода) Required. Order date (dd.mm.yyyy format)",
+                      "counterparty_ext_guid": "(Код грузополучателя) Required. Counterparty code in the external system",
+                      "wh_ext_sys_guid": "(Склад) Warehouse code in the external system",
+                      "recipient_name": "(Наименование грузополучателя) Recipient Name"
+                    },
+                    "ext_sys_doc": "(Код расходной партии) Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+                    "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
+                    "transactions": [
+                      {
+                        "goods": {
+                          "goods_sku": "(Артикул) Good SKU",
+                          "goods_name": "(Наименование) Good SKU",
+                          "cam_id": "(ID камеры) Device/camera id ",
+                          "items": [
+                            {
+                              "barcode": "(Штрихкод товара) Product barcode"
+                            }
+                          ]
+                        },
+                        "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+                        "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+                        "qty": "(Кол-во товара) Quantity of goods",
+                        "container_barcode": "(Ячейка отбора) Container/pallet barcode",
+                        "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+                      },
+                      {
+                        "goods": {
+                          "goods_sku": "(Артикул) Good SKU",
+                          "goods_name": "(Наименование) Good SKU",
+                          "cam_id": "(ID камеры) Device/camera id ",
+                          "items": [
+                            {
+                              "barcode": "(Штрихкод товара) Product barcode"
+                            }
+                          ]
+                        },
+                        "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+                        "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+                        "qty": "(Кол-во товара) Quantity of goods",
+                        "container_barcode": "(Ячейка отбора) Container/pallet barcode",
+                        "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "example": [
+                {
+                  "api_key": "API Key",
+                  "order": {
+                    "ext_sys_guid": "(log_id) Order code in the external system",
+                    "doc_date": "(Дата расхода) Required. Order date (dd.mm.yyyy format)",
+                    "counterparty_ext_guid": "(Код грузополучателя) Required. Counterparty code in the external system",
+                    "wh_ext_sys_guid": "(Склад) Warehouse code in the external system",
+                    "recipient_name": "(Наименование грузополучателя) Recipient Name"
+                  },
+                  "ext_sys_doc": "(Код расходной партии) Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+                  "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
+                  "transactions": [
+                    {
+                      "goods": {
+                        "goods_sku": "(Артикул) Good SKU",
+                        "goods_name": "(Наименование) Good SKU",
+                        "cam_id": "(ID камеры) Device/camera id ",
+                        "items": [
+                          {
+                            "barcode": "(Штрихкод товара) Product barcode"
+                          }
+                        ]
+                      },
+                      "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+                      "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+                      "qty": "(Кол-во товара) Quantity of goods",
+                      "container_barcode": "(Ячейка отбора) Container/pallet barcode",
+                      "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+                    },
+                    {
+                      "goods": {
+                        "goods_sku": "(Артикул) Good SKU",
+                        "goods_name": "(Наименование) Good SKU",
+                        "cam_id": "(ID камеры) Device/camera id ",
+                        "items": [
+                          {
+                            "barcode": "(Штрихкод товара) Product barcode"
+                          }
+                        ]
+                      },
+                      "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+                      "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+                      "qty": "(Кол-во товара) Quantity of goods",
+                      "container_barcode": "(Ячейка отбора) Container/pallet barcode",
+                      "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/CreateTransactions_ex": {
+      "post": {
+        "tags": [
+          "Misc"
+        ],
+        "summary": "Add transactions (example for packing or shipping)",
+        "operationId": "Addtransactions(exampleforpackingorshipping)",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/AddtransactionsexampleforpackingorshippingRequest"
+                },
+                "description": "",
+                "example": [
+                  {
+                    "api_key": "API Key",
+                    "order": {
+                      "ext_sys_guid": "(log_id) Order code in the external system"
+                    },
+                    "ext_sys_doc": "(Код расходной партии) Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+                    "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
+                    "transactions": [
+                      {
+                        "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+                        "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+                        "cam_id": "(ID камеры) Device/camera id ",
+                        "date": "(Время начала операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:30:40"
+                      },
+                      {
+                        "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+                        "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+                        "cam_id": "(ID камеры) Device/camera id ",
+                        "date": "(Время окончания операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:35:15"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "example": [
+                {
+                  "api_key": "API Key",
+                  "order": {
+                    "ext_sys_guid": "(log_id) Order code in the external system"
+                  },
+                  "ext_sys_doc": "(Код расходной партии) Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+                  "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
+                  "transactions": [
+                    {
+                      "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+                      "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+                      "cam_id": "(ID камеры) Device/camera id ",
+                      "date": "(Время начала операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:30:40"
+                    },
+                    {
+                      "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+                      "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+                      "cam_id": "(ID камеры) Device/camera id ",
+                      "date": "(Время окончания операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:35:15"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
     "/addGoodsLoading": {
       "post": {
         "tags": [

@@ -33,90 +33,148 @@
                 "example": [
                   {
                     "api_key": "API Key",
-                    "operation_id": "operation_id",
-                    "log_id": "log id from external system",
-                    "expense_code": "Kod rozhodu",
-                    "pallet": "Kod rozhodnoi partii",
-                    "date_of_expense": "Data rozhodu",
-                    "timestamp": "2021-08-25 15:28:25.730",
-                    "ext_sys_guid": "Product code in the external system",
-                    "goods_sku": "Article",
-                    "goods_name": "Goods name",
-                    "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
-                    "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
-                    "recipient_name": "Name of the contractor-recipient",
-                    "employee_ib": "Employee id",
-                    "employee_pib": "Employee name",
-                    "wh_area_name": "Warehouse area name",
-                    "selection_cell": "Selection cell name",
-                    "wh_area_id": "Warehouse area id",
-                    "qty": "Quantity of goods"
-                  },
-                  {
-                    "api_key": "API Key",
-                    "operation_id": "operation_id",
-                    "log_id": "log id from external system",
-                    "expense_code": "Kod rozhodu",
-                    "pallet": "Kod rozhodnoi partii",
-                    "date_of_expense": "Data rozhodu",
-                    "timestamp": "2021-08-25 15:28:25.730",
-                    "ext_sys_guid": "Product code in the external system",
-                    "goods_sku": "Article",
-                    "goods_name": "Goods name",
-                    "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
-                    "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
-                    "recipient_name": "Name of the contractor-recipient",
-                    "employee_ib": "Employee id",
-                    "employee_pib": "Employee name",
-                    "wh_area_name": "Warehouse area name",
-                    "selection_cell": "Selection cell name",
-                    "wh_area_id": "Warehouse area id",
-                    "qty": "Quantity of goods"
+                    "order": {
+                      "ext_sys_guid": "Order code in the external system",
+                      "doc_date": "Required. Order date (dd.mm.yyyy format)",
+                      "counterparty_ext_guid": "Required. Counterparty code in the external system",
+                      "wh_ext_sys_guid": "Warehouse code in the external system",
+                      "recipient_name": "Recipient Name",
+                      "recipient_address": "Optional. Example: Hryhoriya Skovorody, 17"
+                    },
+                    "ext_sys_doc": "Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+                    "operation_ext_guid": "Required. Code for recording transactions in the external system",
+                    "transactions": [
+                      {
+                        "ext_sys_guid": "External system GUID",
+                        "goods": {
+                          "ext_sys_guid": "External system GUID",
+                          "goods_sku": "Good SKU",
+                          "goods_name": "Good SKU",
+                          "cam_id": "Device/camera id",
+                          "items": [
+                            {
+                              "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+                              "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+                              "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+                              "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+                              "weight": "Weight, grams",
+                              "length": "Length, centimeters",
+                              "width": "Width, centimeters",
+                              "height": "Height, centimeters",
+                              "barcode": "Product barcode"
+                            }
+                          ]
+                        },
+                        "wh_ext_sys_guid": "Warehouse code in the external system",
+                        "wh_area_ext_sys_guid": "Warehouse area code in the external system",
+                        "employee_ext_sys_guid": "Employee code in the external system",
+                        "qty": "Quantity of goods",
+                        "container_barcode": "Container/pallet barcode",
+                        "date": "Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+                      },
+                      {
+                        "ext_sys_guid": "External system GUID",
+                        "goods": {
+                          "ext_sys_guid": "External system GUID",
+                          "goods_sku": "Good SKU",
+                          "goods_name": "Good SKU",
+                          "cam_id": "Device/camera id",
+                          "items": [
+                            {
+                              "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+                              "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+                              "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+                              "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+                              "weight": "Weight, grams",
+                              "length": "Length, centimeters",
+                              "width": "Width, centimeters",
+                              "height": "Height, centimeters",
+                              "barcode": "Product barcode"
+                            }
+                          ]
+                        },
+                        "wh_ext_sys_guid": "Warehouse code in the external system",
+                        "wh_area_ext_sys_guid": "Warehouse area code in the external system",
+                        "employee_ext_sys_guid": "Employee code in the external system",
+                        "qty": "Quantity of goods",
+                        "container_barcode": "Container/pallet barcode",
+                        "date": "Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+                      }
+                    ]
                   }
                 ]
               },
               "example": [
                 {
                   "api_key": "API Key",
-                  "operation_id": "operation_id",
-                  "log_id": "log id from external system",
-                  "expense_code": "Kod rozhodu",
-                  "pallet": "Kod rozhodnoi partii",
-                  "date_of_expense": "Data rozhodu",
-                  "timestamp": "2021-08-25 15:28:25.730",
-                  "ext_sys_guid": "Product code in the external system",
-                  "goods_sku": "Article",
-                  "goods_name": "Goods name",
-                  "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
-                  "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
-                  "recipient_name": "Name of the contractor-recipient",
-                  "employee_ib": "Employee id",
-                  "employee_pib": "Employee name",
-                  "wh_area_name": "Warehouse area name",
-                  "selection_cell": "Selection cell name",
-                  "wh_area_id": "Warehouse area id",
-                  "qty": "Quantity of goods"
-                },
-                {
-                  "api_key": "API Key",
-                  "operation_id": "operation_id",
-                  "log_id": "log id from external system",
-                  "expense_code": "Kod rozhodu",
-                  "pallet": "Kod rozhodnoi partii",
-                  "date_of_expense": "Data rozhodu",
-                  "timestamp": "2021-08-25 15:28:25.730",
-                  "ext_sys_guid": "Product code in the external system",
-                  "goods_sku": "Article",
-                  "goods_name": "Goods name",
-                  "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
-                  "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
-                  "recipient_name": "Name of the contractor-recipient",
-                  "employee_ib": "Employee id",
-                  "employee_pib": "Employee name",
-                  "wh_area_name": "Warehouse area name",
-                  "selection_cell": "Selection cell name",
-                  "wh_area_id": "Warehouse area id",
-                  "qty": "Quantity of goods"
+                  "order": {
+                    "ext_sys_guid": "Order code in the external system",
+                    "doc_date": "Required. Order date (dd.mm.yyyy format)",
+                    "counterparty_ext_guid": "Required. Counterparty code in the external system",
+                    "wh_ext_sys_guid": "Warehouse code in the external system",
+                    "recipient_name": "Recipient Name",
+                    "recipient_address": "Optional. Example: Hryhoriya Skovorody, 17"
+                  },
+                  "ext_sys_doc": "Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+                  "operation_ext_guid": "Required. Code for recording transactions in the external system",
+                  "transactions": [
+                    {
+                      "ext_sys_guid": "External system GUID",
+                      "goods": {
+                        "ext_sys_guid": "External system GUID",
+                        "goods_sku": "Good SKU",
+                        "goods_name": "Good SKU",
+                        "cam_id": "Device/camera id",
+                        "items": [
+                          {
+                            "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+                            "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+                            "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+                            "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+                            "weight": "Weight, grams",
+                            "length": "Length, centimeters",
+                            "width": "Width, centimeters",
+                            "height": "Height, centimeters",
+                            "barcode": "Product barcode"
+                          }
+                        ]
+                      },
+                      "wh_ext_sys_guid": "Warehouse code in the external system",
+                      "wh_area_ext_sys_guid": "Warehouse area code in the external system",
+                      "employee_ext_sys_guid": "Employee code in the external system",
+                      "qty": "Quantity of goods",
+                      "container_barcode": "Container/pallet barcode",
+                      "date": "Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+                    },
+                    {
+                      "ext_sys_guid": "External system GUID",
+                      "goods": {
+                        "ext_sys_guid": "External system GUID",
+                        "goods_sku": "Good SKU",
+                        "goods_name": "Good SKU",
+                        "cam_id": "Device/camera id",
+                        "items": [
+                          {
+                            "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+                            "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+                            "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+                            "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+                            "weight": "Weight, grams",
+                            "length": "Length, centimeters",
+                            "width": "Width, centimeters",
+                            "height": "Height, centimeters",
+                            "barcode": "Product barcode"
+                          }
+                        ]
+                      },
+                      "wh_ext_sys_guid": "Warehouse code in the external system",
+                      "wh_area_ext_sys_guid": "Warehouse area code in the external system",
+                      "employee_ext_sys_guid": "Employee code in the external system",
+                      "qty": "Quantity of goods",
+                      "container_barcode": "Container/pallet barcode",
+                      "date": "Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+                    }
+                  ]
                 }
               ]
             }
@@ -211,48 +269,224 @@
         "title": "AddtransactionsRequest",
         "required": [
           "api_key",
-          "operation_id",
-          "log_id",
-          "expense_code",
-          "pallet",
-          "date_of_expense",
-          "timestamp",
-          "ext_sys_guid",
-          "goods_sku",
-          "goods_name",
-          "wh_ext_sys_name",
-          "recipient_ext_sys_guid",
-          "recipient_name",
-          "employee_ib",
-          "employee_pib",
-          "wh_area_name",
-          "selection_cell",
-          "wh_area_id",
-          "qty"
+          "order",
+          "ext_sys_doc",
+          "operation_ext_guid",
+          "transactions"
         ],
         "type": "object",
         "properties": {
           "api_key": {
             "type": "string"
           },
-          "operation_id": {
+          "order": {
+            "$ref": "#/components/schemas/Order"
+          },
+          "ext_sys_doc": {
             "type": "string"
           },
-          "log_id": {
+          "operation_ext_guid": {
             "type": "string"
           },
-          "expense_code": {
+          "transactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Transaction"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "api_key": "API Key",
+          "order": {
+            "ext_sys_guid": "Order code in the external system",
+            "doc_date": "Required. Order date (dd.mm.yyyy format)",
+            "counterparty_ext_guid": "Required. Counterparty code in the external system",
+            "wh_ext_sys_guid": "Warehouse code in the external system",
+            "recipient_name": "Recipient Name",
+            "recipient_address": "Optional. Example: Hryhoriya Skovorody, 17"
+          },
+          "ext_sys_doc": "Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+          "operation_ext_guid": "Required. Code for recording transactions in the external system",
+          "transactions": [
+            {
+              "ext_sys_guid": "External system GUID",
+              "goods": {
+                "ext_sys_guid": "External system GUID",
+                "goods_sku": "Good SKU",
+                "goods_name": "Good SKU",
+                "cam_id": "Device/camera id",
+                "items": [
+                  {
+                    "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+                    "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+                    "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+                    "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+                    "weight": "Weight, grams",
+                    "length": "Length, centimeters",
+                    "width": "Width, centimeters",
+                    "height": "Height, centimeters",
+                    "barcode": "Product barcode"
+                  }
+                ]
+              },
+              "wh_ext_sys_guid": "Warehouse code in the external system",
+              "wh_area_ext_sys_guid": "Warehouse area code in the external system",
+              "employee_ext_sys_guid": "Employee code in the external system",
+              "qty": "Quantity of goods",
+              "container_barcode": "Container/pallet barcode",
+              "date": "Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+            },
+            {
+              "ext_sys_guid": "External system GUID",
+              "goods": {
+                "ext_sys_guid": "External system GUID",
+                "goods_sku": "Good SKU",
+                "goods_name": "Good SKU",
+                "cam_id": "Device/camera id",
+                "items": [
+                  {
+                    "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+                    "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+                    "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+                    "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+                    "weight": "Weight, grams",
+                    "length": "Length, centimeters",
+                    "width": "Width, centimeters",
+                    "height": "Height, centimeters",
+                    "barcode": "Product barcode"
+                  }
+                ]
+              },
+              "wh_ext_sys_guid": "Warehouse code in the external system",
+              "wh_area_ext_sys_guid": "Warehouse area code in the external system",
+              "employee_ext_sys_guid": "Employee code in the external system",
+              "qty": "Quantity of goods",
+              "container_barcode": "Container/pallet barcode",
+              "date": "Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+            }
+          ]
+        }
+      },
+      "Order": {
+        "title": "Order",
+        "required": [
+          "ext_sys_guid",
+          "doc_date",
+          "counterparty_ext_guid",
+          "wh_ext_sys_guid",
+          "recipient_name",
+          "recipient_address"
+        ],
+        "type": "object",
+        "properties": {
+          "ext_sys_guid": {
             "type": "string"
           },
-          "pallet": {
+          "doc_date": {
             "type": "string"
           },
-          "date_of_expense": {
+          "counterparty_ext_guid": {
             "type": "string"
           },
-          "timestamp": {
+          "wh_ext_sys_guid": {
             "type": "string"
           },
+          "recipient_name": {
+            "type": "string"
+          },
+          "recipient_address": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "ext_sys_guid": "Order code in the external system",
+          "doc_date": "Required. Order date (dd.mm.yyyy format)",
+          "counterparty_ext_guid": "Required. Counterparty code in the external system",
+          "wh_ext_sys_guid": "Warehouse code in the external system",
+          "recipient_name": "Recipient Name",
+          "recipient_address": "Optional. Example: Hryhoriya Skovorody, 17"
+        }
+      },
+      "Transaction": {
+        "title": "Transaction",
+        "required": [
+          "ext_sys_guid",
+          "goods",
+          "wh_ext_sys_guid",
+          "wh_area_ext_sys_guid",
+          "employee_ext_sys_guid",
+          "qty",
+          "container_barcode",
+          "date"
+        ],
+        "type": "object",
+        "properties": {
+          "ext_sys_guid": {
+            "type": "string"
+          },
+          "goods": {
+            "$ref": "#/components/schemas/Goods"
+          },
+          "wh_ext_sys_guid": {
+            "type": "string"
+          },
+          "wh_area_ext_sys_guid": {
+            "type": "string"
+          },
+          "employee_ext_sys_guid": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "string"
+          },
+          "container_barcode": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "ext_sys_guid": "External system GUID",
+          "goods": {
+            "ext_sys_guid": "External system GUID",
+            "goods_sku": "Good SKU",
+            "goods_name": "Good SKU",
+            "cam_id": "Device/camera id",
+            "items": [
+              {
+                "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+                "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+                "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+                "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+                "weight": "Weight, grams",
+                "length": "Length, centimeters",
+                "width": "Width, centimeters",
+                "height": "Height, centimeters",
+                "barcode": "Product barcode"
+              }
+            ]
+          },
+          "wh_ext_sys_guid": "Warehouse code in the external system",
+          "wh_area_ext_sys_guid": "Warehouse area code in the external system",
+          "employee_ext_sys_guid": "Employee code in the external system",
+          "qty": "Quantity of goods",
+          "container_barcode": "Container/pallet barcode",
+          "date": "Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+        }
+      },
+      "Goods": {
+        "title": "Goods",
+        "required": [
+          "ext_sys_guid",
+          "goods_sku",
+          "goods_name",
+          "cam_id",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
           "ext_sys_guid": {
             "type": "string"
           },
@@ -262,54 +496,406 @@
           "goods_name": {
             "type": "string"
           },
-          "wh_ext_sys_name": {
+          "cam_id": {
             "type": "string"
           },
-          "recipient_ext_sys_guid": {
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "ext_sys_guid": "External system GUID",
+          "goods_sku": "Good SKU",
+          "goods_name": "Good SKU",
+          "cam_id": "Device/camera id",
+          "items": [
+            {
+              "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+              "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+              "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+              "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+              "weight": "Weight, grams",
+              "length": "Length, centimeters",
+              "width": "Width, centimeters",
+              "height": "Height, centimeters",
+              "barcode": "Product barcode"
+            }
+          ]
+        }
+      },
+      "Item": {
+        "title": "Item",
+        "required": [
+          "goods_mu_ext_sys_guid",
+          "cod_kspovo",
+          "base_unit",
+          "k",
+          "weight",
+          "length",
+          "width",
+          "height",
+          "barcode"
+        ],
+        "type": "object",
+        "properties": {
+          "goods_mu_ext_sys_guid": {
             "type": "string"
           },
-          "recipient_name": {
+          "cod_kspovo": {
             "type": "string"
           },
-          "employee_ib": {
+          "base_unit": {
             "type": "string"
           },
-          "employee_pib": {
+          "k": {
             "type": "string"
           },
-          "wh_area_name": {
+          "weight": {
             "type": "string"
           },
-          "selection_cell": {
+          "length": {
             "type": "string"
           },
-          "wh_area_id": {
+          "width": {
             "type": "string"
           },
-          "qty": {
+          "height": {
+            "type": "string"
+          },
+          "barcode": {
             "type": "string"
           }
         },
         "example": {
+          "goods_mu_ext_sys_guid": "External unit code. Alternative parameter cod_kspovo",
+          "cod_kspovo": "Code of the unit of measurement according to KSPOVO. An alternative parameter is mu_ext_sys_guid.",
+          "base_unit": "Base unit attribute (may be 0-no, 1-yes)",
+          "k": "Conversion factor of the basic unit of measurement. For the base = 1",
+          "weight": "Weight, grams",
+          "length": "Length, centimeters",
+          "width": "Width, centimeters",
+          "height": "Height, centimeters",
+          "barcode": "Product barcode"
+        }
+      },
+      "AddtransactionsdatalessRequest": {
+        "title": "AddtransactionsdatalessRequest",
+        "required": [
+          "api_key",
+          "order",
+          "ext_sys_doc",
+          "operation_ext_guid",
+          "transactions"
+        ],
+        "type": "object",
+        "properties": {
+          "api_key": {
+            "type": "string"
+          },
+          "order": {
+            "$ref": "#/components/schemas/Order1"
+          },
+          "ext_sys_doc": {
+            "type": "string"
+          },
+          "operation_ext_guid": {
+            "type": "string"
+          },
+          "transactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Transaction1"
+            },
+            "description": ""
+          }
+        },
+        "example": {
           "api_key": "API Key",
-          "operation_id": "operation_id",
-          "log_id": "log id from external system",
-          "expense_code": "Kod rozhodu",
-          "pallet": "Kod rozhodnoi partii",
-          "date_of_expense": "Data rozhodu",
-          "timestamp": "2021-08-25 15:28:25.730",
-          "ext_sys_guid": "Product code in the external system",
-          "goods_sku": "Article",
-          "goods_name": "Goods name",
-          "wh_ext_sys_name": "The name of the warehouse, like - Sklad 3D",
-          "recipient_ext_sys_guid": "Code of the contractor-recipient of the order in the external system",
-          "recipient_name": "Name of the contractor-recipient",
-          "employee_ib": "Employee id",
-          "employee_pib": "Employee name",
-          "wh_area_name": "Warehouse area name",
-          "selection_cell": "Selection cell name",
-          "wh_area_id": "Warehouse area id",
-          "qty": "Quantity of goods"
+          "order": {
+            "ext_sys_guid": "(log_id) Order code in the external system",
+            "doc_date": "(Дата расхода) Required. Order date (dd.mm.yyyy format)",
+            "counterparty_ext_guid": "(Код грузополучателя) Required. Counterparty code in the external system",
+            "wh_ext_sys_guid": "(Склад) Warehouse code in the external system",
+            "recipient_name": "(Наименование грузополучателя) Recipient Name"
+          },
+          "ext_sys_doc": "(Код расходной партии) Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+          "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
+          "transactions": [
+            {
+              "goods": {
+                "goods_sku": "(Артикул) Good SKU",
+                "goods_name": "(Наименование) Good SKU",
+                "cam_id": "(ID камеры) Device/camera id ",
+                "items": [
+                  {
+                    "barcode": "(Штрихкод товара) Product barcode"
+                  }
+                ]
+              },
+              "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+              "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+              "qty": "(Кол-во товара) Quantity of goods",
+              "container_barcode": "(Ячейка отбора) Container/pallet barcode",
+              "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+            },
+            {
+              "goods": {
+                "goods_sku": "(Артикул) Good SKU",
+                "goods_name": "(Наименование) Good SKU",
+                "cam_id": "(ID камеры) Device/camera id ",
+                "items": [
+                  {
+                    "barcode": "(Штрихкод товара) Product barcode"
+                  }
+                ]
+              },
+              "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+              "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+              "qty": "(Кол-во товара) Quantity of goods",
+              "container_barcode": "(Ячейка отбора) Container/pallet barcode",
+              "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+            }
+          ]
+        }
+      },
+      "Order1": {
+        "title": "Order1",
+        "required": [
+          "ext_sys_guid",
+          "doc_date",
+          "counterparty_ext_guid",
+          "wh_ext_sys_guid",
+          "recipient_name"
+        ],
+        "type": "object",
+        "properties": {
+          "ext_sys_guid": {
+            "type": "string"
+          },
+          "doc_date": {
+            "type": "string"
+          },
+          "counterparty_ext_guid": {
+            "type": "string"
+          },
+          "wh_ext_sys_guid": {
+            "type": "string"
+          },
+          "recipient_name": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "ext_sys_guid": "(log_id) Order code in the external system",
+          "doc_date": "(Дата расхода) Required. Order date (dd.mm.yyyy format)",
+          "counterparty_ext_guid": "(Код грузополучателя) Required. Counterparty code in the external system",
+          "wh_ext_sys_guid": "(Склад) Warehouse code in the external system",
+          "recipient_name": "(Наименование грузополучателя) Recipient Name"
+        }
+      },
+      "Transaction1": {
+        "title": "Transaction1",
+        "required": [
+          "goods",
+          "wh_area_ext_sys_guid",
+          "employee_ext_sys_guid",
+          "qty",
+          "container_barcode",
+          "date"
+        ],
+        "type": "object",
+        "properties": {
+          "goods": {
+            "$ref": "#/components/schemas/Goods1"
+          },
+          "wh_area_ext_sys_guid": {
+            "type": "string"
+          },
+          "employee_ext_sys_guid": {
+            "type": "string"
+          },
+          "qty": {
+            "type": "string"
+          },
+          "container_barcode": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "goods": {
+            "goods_sku": "(Артикул) Good SKU",
+            "goods_name": "(Наименование) Good SKU",
+            "cam_id": "(ID камеры) Device/camera id ",
+            "items": [
+              {
+                "barcode": "(Штрихкод товара) Product barcode"
+              }
+            ]
+          },
+          "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+          "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+          "qty": "(Кол-во товара) Quantity of goods",
+          "container_barcode": "(Ячейка отбора) Container/pallet barcode",
+          "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
+        }
+      },
+      "Goods1": {
+        "title": "Goods1",
+        "required": [
+          "goods_sku",
+          "goods_name",
+          "cam_id",
+          "items"
+        ],
+        "type": "object",
+        "properties": {
+          "goods_sku": {
+            "type": "string"
+          },
+          "goods_name": {
+            "type": "string"
+          },
+          "cam_id": {
+            "type": "string"
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Item1"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "goods_sku": "(Артикул) Good SKU",
+          "goods_name": "(Наименование) Good SKU",
+          "cam_id": "(ID камеры) Device/camera id ",
+          "items": [
+            {
+              "barcode": "(Штрихкод товара) Product barcode"
+            }
+          ]
+        }
+      },
+      "Item1": {
+        "title": "Item1",
+        "required": [
+          "barcode"
+        ],
+        "type": "object",
+        "properties": {
+          "barcode": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "barcode": "(Штрихкод товара) Product barcode"
+        }
+      },
+      "AddtransactionsexampleforpackingorshippingRequest": {
+        "title": "AddtransactionsexampleforpackingorshippingRequest",
+        "required": [
+          "api_key",
+          "order",
+          "ext_sys_doc",
+          "operation_ext_guid",
+          "transactions"
+        ],
+        "type": "object",
+        "properties": {
+          "api_key": {
+            "type": "string"
+          },
+          "order": {
+            "$ref": "#/components/schemas/Order2"
+          },
+          "ext_sys_doc": {
+            "type": "string"
+          },
+          "operation_ext_guid": {
+            "type": "string"
+          },
+          "transactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Transaction2"
+            },
+            "description": ""
+          }
+        },
+        "example": {
+          "api_key": "API Key",
+          "order": {
+            "ext_sys_guid": "(log_id) Order code in the external system"
+          },
+          "ext_sys_doc": "(Код расходной партии) Document code (order, receipt e.t.c.) in the external system. Required if no order block is specified",
+          "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
+          "transactions": [
+            {
+              "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+              "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+              "cam_id": "(ID камеры) Device/camera id ",
+              "date": "(Время начала операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:30:40"
+            },
+            {
+              "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+              "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+              "cam_id": "(ID камеры) Device/camera id ",
+              "date": "(Время окончания операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:35:15"
+            }
+          ]
+        }
+      },
+      "Order2": {
+        "title": "Order2",
+        "required": [
+          "ext_sys_guid"
+        ],
+        "type": "object",
+        "properties": {
+          "ext_sys_guid": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "ext_sys_guid": "(log_id) Order code in the external system"
+        }
+      },
+      "Transaction2": {
+        "title": "Transaction2",
+        "required": [
+          "wh_area_ext_sys_guid",
+          "employee_ext_sys_guid",
+          "cam_id",
+          "date"
+        ],
+        "type": "object",
+        "properties": {
+          "wh_area_ext_sys_guid": {
+            "type": "string"
+          },
+          "employee_ext_sys_guid": {
+            "type": "string"
+          },
+          "cam_id": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
+          "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
+          "cam_id": "(ID камеры) Device/camera id ",
+          "date": "(Время начала операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:30:40"
         }
       },
       "AddgoodsloadingRequest": {
@@ -396,7 +982,6 @@
     "securitySchemes": {
       "API-Key": {
         "type": "apiKey",
-        "description": "",
         "name": "X-API-Key",
         "in": "header"
       }

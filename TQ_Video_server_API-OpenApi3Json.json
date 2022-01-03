@@ -222,6 +222,7 @@
                     "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
                     "transactions": [
                       {
+                        "ext_sys_guid": "External transaction system GUID",
                         "goods": {
                           "goods_sku": "(Артикул) Good SKU",
                           "goods_name": "(Наименование) Good SKU",
@@ -239,6 +240,7 @@
                         "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
                       },
                       {
+                        "ext_sys_guid": "External transaction system GUID",
                         "goods": {
                           "goods_sku": "(Артикул) Good SKU",
                           "goods_name": "(Наименование) Good SKU",
@@ -273,6 +275,7 @@
                   "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
                   "transactions": [
                     {
+                      "ext_sys_guid": "External transaction system GUID",
                       "goods": {
                         "goods_sku": "(Артикул) Good SKU",
                         "goods_name": "(Наименование) Good SKU",
@@ -290,6 +293,7 @@
                       "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
                     },
                     {
+                      "ext_sys_guid": "External transaction system GUID",
                       "goods": {
                         "goods_sku": "(Артикул) Good SKU",
                         "goods_name": "(Наименование) Good SKU",
@@ -350,12 +354,14 @@
                     "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
                     "transactions": [
                       {
+                        "ext_sys_guid": "External transaction system GUID",
                         "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
                         "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
                         "cam_id": "(ID камеры) Device/camera id ",
                         "date": "(Время начала операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:30:40"
                       },
                       {
+                        "ext_sys_guid": "External transaction system GUID",
                         "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
                         "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
                         "cam_id": "(ID камеры) Device/camera id ",
@@ -375,12 +381,14 @@
                   "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
                   "transactions": [
                     {
+                      "ext_sys_guid": "External transaction system GUID",
                       "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
                       "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
                       "cam_id": "(ID камеры) Device/camera id ",
                       "date": "(Время начала операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:30:40"
                     },
                     {
+                      "ext_sys_guid": "External transaction system GUID",
                       "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
                       "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
                       "cam_id": "(ID камеры) Device/camera id ",
@@ -838,6 +846,7 @@
           "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
           "transactions": [
             {
+              "ext_sys_guid": "External transaction system GUID",
               "goods": {
                 "goods_sku": "(Артикул) Good SKU",
                 "goods_name": "(Наименование) Good SKU",
@@ -855,6 +864,7 @@
               "date": "(Время отбора) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 15:51:44"
             },
             {
+              "ext_sys_guid": "External transaction system GUID",
               "goods": {
                 "goods_sku": "(Артикул) Good SKU",
                 "goods_name": "(Наименование) Good SKU",
@@ -912,6 +922,7 @@
       "Transaction1": {
         "title": "Transaction1",
         "required": [
+          "ext_sys_guid",
           "goods",
           "wh_area_ext_sys_guid",
           "employee_ext_sys_guid",
@@ -921,6 +932,9 @@
         ],
         "type": "object",
         "properties": {
+          "ext_sys_guid": {
+            "type": "string"
+          },
           "goods": {
             "$ref": "#/components/schemas/Goods1"
           },
@@ -941,6 +955,7 @@
           }
         },
         "example": {
+          "ext_sys_guid": "External transaction system GUID",
           "goods": {
             "goods_sku": "(Артикул) Good SKU",
             "goods_name": "(Наименование) Good SKU",
@@ -1051,12 +1066,14 @@
           "operation_ext_guid": "(Операция) Required. Code for recording transactions in the external system",
           "transactions": [
             {
+              "ext_sys_guid": "External transaction system GUID",
               "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
               "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
               "cam_id": "(ID камеры) Device/camera id ",
               "date": "(Время начала операции) Scan timestamp DD.MM.YYYY HH:SS:MM. For example: 28.10.2021 12:30:40"
             },
             {
+              "ext_sys_guid": "External transaction system GUID",
               "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
               "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
               "cam_id": "(ID камеры) Device/camera id ",
@@ -1083,6 +1100,7 @@
       "Transaction2": {
         "title": "Transaction2",
         "required": [
+          "ext_sys_guid",
           "wh_area_ext_sys_guid",
           "employee_ext_sys_guid",
           "cam_id",
@@ -1090,6 +1108,9 @@
         ],
         "type": "object",
         "properties": {
+          "ext_sys_guid": {
+            "type": "string"
+          },
           "wh_area_ext_sys_guid": {
             "type": "string"
           },
@@ -1104,6 +1125,7 @@
           }
         },
         "example": {
+          "ext_sys_guid": "External transaction system GUID",
           "wh_area_ext_sys_guid": "(Код зоны склада) Warehouse area code in the external system",
           "employee_ext_sys_guid": "(ID комплектовщик) Employee code in the external system",
           "cam_id": "(ID камеры) Device/camera id ",
